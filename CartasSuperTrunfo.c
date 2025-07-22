@@ -88,6 +88,7 @@
                 printf("----------------------------------------------- \n");
                 /*carta 2*/
 
+                
                 printf("carta 2 \n");
                 printf("estado: %s\n", estado2);
                 printf("codigo: %s\n", codigoCarta2);
