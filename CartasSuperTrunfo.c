@@ -21,10 +21,10 @@
 
                  /* Recebendo dados do Usuário */
                 printf("        \n");
-                printf("Bem vindo ao jogo, nesse primeiro momento você vai cadastrar duas cartas \n");
-                printf("Essas cartas serão compostas por estados, cidades, população, área, PIB e pontos turisticos \n");
-                printf("e suas respectivas caractristicas de acordo com a descrição! \n");
-                printf("        \n");
+                printf("Nesse primeiro momento você vai cadastrar duas cartas\n");
+                printf("Essas cartas serão compostas por estados, cidades, população, área, PIB e pontos turisticos\n");
+               
+               printf("        \n");
                 
                 printf("Insira os dados da primeira carta abaixo! \n");
                 printf("        \n");
@@ -131,7 +131,7 @@
                 printf("----------------------------------------------- \n");
                 printf("----------------------------------------------- \n");
 
-                
+
                 printf("        \n");
 
 
