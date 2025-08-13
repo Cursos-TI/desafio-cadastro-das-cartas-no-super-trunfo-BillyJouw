@@ -44,7 +44,7 @@
                 printf("Iforme a Area (em Km) da cidade %s \n", nome_da_Cidade);
                 scanf("%f", &area1);
 
-                printf("Qual o PIB da cidade %s em bilhões de reais \n", nome_da_Cidade);
+                printf("Qual o PIB da cidade %s \n", nome_da_Cidade);
                 scanf("%f", &pib1);
 
                 printf("Quantos pontos turisticos possuem a cidade %s ? \n", nome_da_Cidade);
@@ -108,7 +108,7 @@
                 printf("Pontos turisticos: %d\n", pt1);
                 printf("Densidade Populacional: %.3f hab/km \n", densitade1);
                 printf("PIB por capita: %.2f reais \n", pibporcapital1);
-                printf("Super Poder: %f \n", superpoder1);
+                printf("Super Poder: %.f \n", superpoder1);
                 printf("        \n");
 
                 printf("----------------------------------------------- \n");
@@ -131,26 +131,11 @@
                 printf("----------------------------------------------- \n");
                 printf("----------------------------------------------- \n");
 
-                /* Comparando as cartas */
-                printf("        \n");
-                printf("Agora vamos comparar as cartas \n");
-                printf("Atributo: População\n");
-                printf("        \n");
-
-
-
-                printf("Carta 1 - %s : %lu \n", nome_da_Cidade2, populacao);
-                printf("Carta2 - %s : %lu \n", nome_da_Cidade, polucacao2);
-                if (populacao > polucacao2) {
-                        printf("Resultado: Carta 1 (%s) Venceu!\n", nome_da_Cidade);
-                } else {
-                        printf("Resultado: Carta 2 (%s) Venceu!\n", nome_da_Cidade2);
-                }
-
                 
+                printf("        \n");
 
 
-
+                printf("Agora vamos comparar os outros atributos\n");
                 printf("se o resultado for 1, significa que a carta %s venceu e se o resultado for 0, significa que a carta %s venceu \n", estado1, estado2);
                 printf("        \n");
                 
