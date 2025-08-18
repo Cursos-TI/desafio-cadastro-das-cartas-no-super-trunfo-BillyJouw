@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
         int main(){
                 /* Declarando Tipo de Variaveis */
             char estado1[10], estado2[10];
@@ -11,6 +13,11 @@
             float densitade1, densitade2;
             float pibporcapital1, pibporcapital2;
             float superpoder1, superpoder2;
+            int resultado1, resultado2;
+            char primeiroAtributo, segundoAtributo;
+            int ataque1, ataque2, defesa1, defesa2, recuo1, recuo2;
+            
+
 
 
                 /* Imprimindo Boas Vindas */
@@ -21,10 +28,10 @@
 
                  /* Recebendo dados do Usuário */
                 printf("        \n");
-                printf("Nesse primeiro momento você vai cadastrar duas cartas\n");
-                printf("Essas cartas serão compostas por estados, cidades, população, área, PIB e pontos turisticos\n");
-               
-               printf("        \n");
+                printf("Bem vindo ao jogo, nesse primeiro momento você vai cadastrar duas cartas \n");
+                printf("Essas cartas serão compostas por estados, cidades, população, área, PIB e pontos turisticos \n");
+                printf("e suas respectivas caractristicas de acordo com a descrição! \n");
+                printf("        \n");
                 
                 printf("Insira os dados da primeira carta abaixo! \n");
                 printf("        \n");
@@ -38,10 +45,10 @@
                 printf("Insira o nome da cidade: \n");
                 scanf("%s", nome_da_Cidade);
 
-                printf("Agora informe qual a população da cidade %s \n", nome_da_Cidade);
+                printf("Agora informe qual a população da cidade %s (com numeros de ate 5 digitos)\n", nome_da_Cidade);
                 scanf("%lu", &populacao);
                 
-                printf("Iforme a Area (em Km) da cidade %s \n", nome_da_Cidade);
+                printf("Iforme a Area (com numeros de ate 5 digitos) da cidade %s \n", nome_da_Cidade);
                 scanf("%f", &area1);
 
                 printf("Qual o PIB da cidade %s \n", nome_da_Cidade);
@@ -65,10 +72,10 @@
                 printf("Insira o nome da cidade: \n");
                 scanf("%s", nome_da_Cidade2);
 
-                printf("Agora informe qual a população da cidade %s \n", nome_da_Cidade2);
+                printf("Agora informe qual a população da cidade %s (com numeros de ate 5 digitos) \n", nome_da_Cidade2);
                 scanf("%lu", &polucacao2);
 
-                printf("Iforme a Area (em Km) da cidade %s \n", nome_da_Cidade2);
+                printf("Iforme a Area (com numeros de ate 5 digitos) da cidade %s \n", nome_da_Cidade2);
                 scanf("%f", &area2);
 
                 printf("Qual o PIB da cidade %s ? \n", nome_da_Cidade2);
@@ -108,7 +115,7 @@
                 printf("Pontos turisticos: %d\n", pt1);
                 printf("Densidade Populacional: %.3f hab/km \n", densitade1);
                 printf("PIB por capita: %.2f reais \n", pibporcapital1);
-                printf("Super Poder: %.f \n", superpoder1);
+                printf("Super Poder: %f \n", superpoder1);
                 printf("        \n");
 
                 printf("----------------------------------------------- \n");
@@ -131,35 +138,92 @@
                 printf("----------------------------------------------- \n");
                 printf("----------------------------------------------- \n");
 
+        srand(time(0));
+            ataque1 = populacao / 100;
+            ataque2 = rand() % 500 + 400;
+            defesa1 = area1 / 100;
+            defesa2 = rand() % 500 + 400;
+            recuo1 = superpoder1 / 100;
+            recuo2 = rand() % 200 + 200;
+        /*    
+        printf("%d")
+        printf("%d \n", ataque1);
+        printf("e %d\n", ataque2);
+        */
 
-                printf("        \n");
 
+      printf("agora vamos utilizar os atributos das cartas. \n");
+      printf("\n");
+      printf("Escolha o primeiro atributo\n");
+      printf("A. Ataque\n");
+      printf("D. Defesa\n");
+      printf("R. Recuo\n");
+      printf("\n");
 
-                printf("Agora vamos comparar os outros atributos\n");
-                printf("se o resultado for 1, significa que a carta %s venceu e se o resultado for 0, significa que a carta %s venceu \n", estado1, estado2);
-                printf("        \n");
+        
+        scanf(" %c", &primeiroAtributo);
+
+        switch (primeiroAtributo)
+        {
+        case 'a':
+        case 'A': 
+                printf("Voce escolheu a opção ataque!\n");
+                resultado1 = ataque1 > ataque2 ? 1 : 0;
+                break;
+        case 'D':
+        case 'd':
+                printf("Voce escolheu a opção Defesa\n");
+                resultado1 = defesa1 > defesa2 ? 1 : 0;
+        case 'R':
+        case 'r':
+                printf("Voce escolheu a opção Recuo\n");
+                resultado1 = recuo1 > recuo2 ? 1 : 0;
+                break;
+        }
+        printf("\n");
+        printf("Escolha o segundo atributo\n");
+        printf("Atenção!! Voce deve escolher um atributo diferente do primeiro\n");
+        printf("A. Ataque\n");
+        printf("D. Defesa\n");
+        printf("R. Recuo\n");
+        printf("\n");
+
+        scanf(" %c", &segundoAtributo);
+
+        if (primeiroAtributo == segundoAtributo)
+        {
+                printf("Voce escolheu o mesmo atributo!");
+        } else {
+        switch (segundoAtributo)
+        {
+        case 'a':
+        case 'A': 
+                printf("Voce escolheu a opção ataque!\n");
+                resultado2 = ataque1 > ataque2 ? 1 : 0;
+                break;
+        case 'D':
+        case 'd':
+                printf("Voce escolheu a opção Defesa\n");
+                resultado2 = defesa1 > defesa2 ? 1 : 0;
+                break;
+        case 'R':
+        case 'r':
+                printf("Voce escolheu a opção Recuo\n");
+                resultado2 = recuo1 > recuo2 ? 1 : 0;
+                break;
+        }
+
+        if (resultado1 && resultado2)
+        {
+                printf("Parabens, voce venceu\n");
+        } else if (resultado1 != resultado2){
+                printf("Empatou\n");
+        } else {
+                printf("Voce perdeu!\n");
+        }
+        }
+
                 
-               int resultado1 = populacao > polucacao2;
-                int resultado2 = area1 > area2;
-                int resultado3 = pib1 > pib2;
-                int resultado4 = pt1 > pt2;
-                int resultado5 = densitade1 > densitade2;
-                int resultado6 = pibporcapital1 > pibporcapital2;
-                int resultado7 = superpoder1 > superpoder2;
-
-                printf("comparaçãp de cartas: \n");
-                printf("População: %d \n", resultado1);
-                printf("Área: %d \n", resultado2);
-                printf("PIB: %d \n", resultado3);
-                printf("Pontos turisticos: %d \n", resultado4);
-                printf("Densidade Populacional: %d \n", resultado5);
-                printf("PIB por capita: %d \n", resultado6);
-                printf("Super Poder: %d \n", resultado7);
-
-
-
-
-
 
 
 
